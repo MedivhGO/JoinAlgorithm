@@ -2,7 +2,11 @@ import timeit
 
 
 def nested_join(r, s):
-    pass
+    res = []
+    for x in r:
+        for y in s:
+            if x == y:
+                res.append([x,y])
 
 def sort_merge_join(r, s):
     pass
@@ -21,11 +25,11 @@ if __name__ == '__main__':
             t1 = timeit.Timer('nested_join(r,s)', 'from __main__ import nested_join, r, s')
             t2 = timeit.Timer('sort_merge_join(r, s)', 'from __main__ import sort_merge_join, r, s')
             t3 = timeit.Timer('hash_join(r, s)', 'from __main__ import hash_join, r, s')
-            print("run nested join time : ")
+            print("run nested join time:     ", end='')
             print(t1.timeit())
-            print("run sort merge join time: ")
+            print("run sort merge join time: ", end='')
             print(t2.timeit())
-            print("run hash join time: ")
+            print("run hash join time:       ", end='')
             print(t3.timeit())
         print("-------------------------")
         print('\n')
