@@ -2,7 +2,7 @@
 
 1. nested loop join
 
-2. sort merge join
+2. sorted merge join
 
 3. hash join
 
