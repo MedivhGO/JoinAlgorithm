@@ -2,15 +2,10 @@ import timeit
 
 
 def nested_join(r, s):
-    res = []
-    for x in r:
-        for y in s:
-            res.append([x, y])
-
+    pass
 
 def sort_merge_join(r, s):
     pass
-
 
 def hash_join(r, s):
     pass
