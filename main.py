@@ -28,3 +28,4 @@ if __name__ == '__main__':
             print("run hash join time: ")
             print(t3.timeit())
         print("-------------------------")
+        print('\n')
