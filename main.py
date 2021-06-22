@@ -12,8 +12,6 @@ def hash_join(r, s):
 
 
 if __name__ == '__main__':
-    r = []
-    s = []
     for i in range(1, 5):
         print("testcase"+str(i))
         print("-------------------------")
