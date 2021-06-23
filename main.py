@@ -37,14 +37,23 @@ def sorted_merge_join(r, s):
 
 def hash_join(r, s):
     res = []
-    hashtable = {}
+    hashtabler = {}
     for x in r:
-        hashtable[x] = hashtable.get(x,0) + 1
-    for e in s:
-        if e in hashtable:
-            n = hashtable.get(e)
-            for i in range(n):
-                res.append([e,e])
+        if x%7 not in hashtabler: # 使用x%7来计算hash值
+            hashtabler[x%7] = []
+        hashtabler[x%7].append(x)
+
+    hashtables = {}
+    for x in s:
+        if x % 7 not in hashtables:
+            hashtables[x % 7] = []
+        hashtables[x % 7].append(x)
+
+    for x,y in hashtabler.items():
+        for z in hashtables[x]:
+            for t in y:
+                if z == t: # 可能会发生冲突,所以一个分区里的值并不一定全部相同
+                    res.append([t,t])
     #print(res)
 
 
